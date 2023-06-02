@@ -32,7 +32,7 @@ public class EmployeeManager {
         else
             System.out.println("Pracownik o takim ID nie istnieje");
     }
-    public Employee searchEmployeeByID(int employeeID) {
+    private Employee searchEmployeeByID(int employeeID) {
         if(employees.containsKey(employeeID)){
             return employees.get(employeeID);
         }
@@ -47,13 +47,13 @@ public class EmployeeManager {
             System.out.println(employee);
         }
     }
-    public HashSet<Employee> searchEmployeesByPosition(String position){
+    public HashSet<Employee> searchEmployeesByLastName(String lastName){
         HashSet<Employee> employeeList = new HashSet<>(employees.values());
         Iterator<Employee> employeeIterator = employeeList.iterator();
         while(employeeIterator.hasNext())
         {
             Employee employee = employeeIterator.next();
-            if(!employee.getPosition().equals(position))
+            if(!employee.getLastName().equals(lastName))
                 employeeIterator.remove();
         }
         return employeeList;
