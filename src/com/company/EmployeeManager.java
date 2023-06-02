@@ -10,9 +10,9 @@ public class EmployeeManager {
         this.employees = employees;
     }
 
-    public  void addEmployee(Employee employee){
-        Integer keyEmployee = employee.getEmployeeID();
-        employees.put(keyEmployee,employee);
+    public  void addEmployee(String firstName, String lastName, String position, int salary){
+        Employee emp = new Employee(firstName, lastName, position, salary);
+        employees.put(emp.getEmployeeID(), emp);
     }
     public void removeEmployee(Employee employee){
         if(employees.containsKey(employee.getEmployeeID()))
