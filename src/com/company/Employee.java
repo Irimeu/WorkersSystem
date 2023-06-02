@@ -3,6 +3,11 @@ public class Employee {
 
     private String firstName;
     private String lastName;
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
     private String position;
     private  int employeeID;
     private int salary;

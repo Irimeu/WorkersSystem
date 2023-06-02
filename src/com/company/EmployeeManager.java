@@ -21,10 +21,13 @@ public class EmployeeManager {
             System.out.println("Pracownik o takim ID nie istnieje");
     }
 
-    public void updateEmployee(int employeeID, Employee newEmployee){
+    public void updateEmployee(int employeeID, String Position, int salary){
         if(employees.containsKey(employeeID))
         {
-            employees.put(employeeID,newEmployee);
+            Employee employee = searchEmployeeByID(employeeID);
+            employee.setPosition(Position);
+            employee.setSalary(salary);
+            employees.put(employeeID,employee);
         }
         else
             System.out.println("Pracownik o takim ID nie istnieje");
